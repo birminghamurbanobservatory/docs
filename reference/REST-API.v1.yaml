@@ -17,5 +17,17 @@ paths:
         '200':
           description: OK
       operationId: get-sensors
+  /deployments:
+    get:
+      summary: Get Sensors
+      tags: []
+      responses: {}
+      operationId: get-deployments
+    post:
+      summary: ''
+      operationId: post-deployments
+      responses:
+        '200':
+          description: OK
 components:
   schemas: {}
