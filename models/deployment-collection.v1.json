@@ -8,8 +8,10 @@
   "properties": {
     "@context": {
       "type": "array",
-      "uniqueItems": false,
-      "items": {}
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
     },
     "@id": {
       "type": "string",
@@ -18,8 +20,13 @@
     "member": {
       "type": "array",
       "items": {
-        "$ref": "./deployment.v1.json"
+        "$ref": "./deployment-in-collection.v1.json"
       }
     }
-  }
+  },
+  "required": [
+    "@context",
+    "@id",
+    "member"
+  ]
 }

@@ -5,14 +5,7 @@
     "deployments"
   ],
   "description": "Permitted deployment structure during creation.",
-  "x-examples": {
-    "example-1": {
-      "id": "reference-weather-stations",
-      "name": "Reference weather stations",
-      "description": "High accuracy with regular maintenance",
-      "public": "true"
-    }
-  },
+  "x-examples": {},
   "properties": {
     "id": {
       "type": "string",

@@ -1,0 +1,45 @@
+{
+  "title": "deployment-in-collection",
+  "type": "object",
+  "x-tags": [
+    "deployments"
+  ],
+  "properties": {
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+    },
+    "description": {
+      "type": "string"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "@type": {
+      "type": "string"
+    },
+    "@id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "maxLength": 44,
+      "minLength": 1
+    }
+  },
+  "required": [
+    "updatedAt",
+    "createdAt",
+    "name",
+    "description",
+    "public",
+    "@id"
+  ]
+}

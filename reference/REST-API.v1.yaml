@@ -31,18 +31,67 @@ paths:
                 $ref: ../models/deployment-collection.v1.json
       operationId: get-deployments
       description: Retrieves a collection of deployments.
+      parameters:
+        - schema:
+            type: boolean
+          in: query
+          name: public
+        - schema:
+            type: boolean
+          in: query
+          name: includeAllPublic
+        - schema:
+            type: string
+          in: query
+          name: id__begins
+          description: Useful for autocomplete form inputs
     post:
       summary: Create Deployment
       operationId: post-deployments
       responses:
-        '200':
-          description: OK
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ../models/deployment-response.v1.json
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: ../models/error-response.v1.json
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../models/error-response.v1.json
+              examples: {}
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../models/error-response.v1.json
       requestBody:
         content:
           application/json:
             schema:
               $ref: ../models/deployment-create.v1.json
+            examples:
+              example-1:
+                value:
+                  id: reference-weather-stations
+                  name: Reference weather stations
+                  description: High accuracy with regular maintenance
+                  public: 'true'
+              example-2:
+                value:
+                  name: Lab Calibration Testing
+                  public: false
         description: "When creating a deployment you have the option to specifically define the `id`. If it's not defined, the `id` will be generated from the `name`."
+      description: 'Only users that have been granted the special permission `create:deployment` can create a deployment.'
   '/deployments/{deploymentId}':
     parameters:
       - schema:
@@ -54,19 +103,46 @@ paths:
       summary: Get Deployment
       tags:
         - deployments
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/deployment-response.v1.json
       operationId: get-deployments-deploymentId
     patch:
       summary: Update Deployment
       tags:
         - deployments
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/deployment-response.v1.json
+              examples: {}
       operationId: patch-deployments-deploymentId
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/deployment-updates.v1.json
+            examples:
+              example-1:
+                value:
+                  name: My now public deployment
+                  description: No longer visible by the public
+                  public: false
     delete:
       summary: Delete Deployment
       tags:
         - deployments
-      responses: {}
+      responses:
+        '204':
+          description: No Content
       operationId: delete-deployments-deploymentId
 components:
   schemas: {}
+  securitySchemes: {}

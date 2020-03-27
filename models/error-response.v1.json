@@ -1,0 +1,41 @@
+{
+  "title": "error-response",
+  "type": "object",
+  "x-tags": [
+    "errors"
+  ],
+  "x-examples": {
+    "Unauthorized": {
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "errorCode": "Unauthorized",
+      "message": "Authentication is required to make this request."
+    },
+    "Bad Request": {
+      "statusCode": 400,
+      "status": "Bad Request",
+      "errorCode": "InvalidDeployment",
+      "message": "\"name\" is required"
+    }
+  },
+  "properties": {
+    "statusCode": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string"
+    },
+    "errorCode": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "statusCode",
+    "status",
+    "errorCode",
+    "message"
+  ]
+}

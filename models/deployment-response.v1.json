@@ -29,6 +29,26 @@
     "updatedAt": {
       "type": "string",
       "format": "date-time"
+    },
+    "@type": {
+      "type": "string"
+    },
+    "@context": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
     }
-  }
+  },
+  "required": [
+    "@id",
+    "public",
+    "description",
+    "name",
+    "createdAt",
+    "updatedAt",
+    "@type",
+    "@context"
+  ]
 }
