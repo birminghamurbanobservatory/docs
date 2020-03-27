@@ -5,6 +5,7 @@ info:
   contact:
     name: Bham Urban Obs Team
     url: 'https://birminghamurbanobservatory.com/contact/'
+  description: The Birmingham Urban Observatory REST API is a great way to programically access our data.
 servers:
   - url: 'https://api.birminghamurbanobservatory.com'
 paths:
