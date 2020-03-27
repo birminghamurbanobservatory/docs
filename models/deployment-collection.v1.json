@@ -1,0 +1,25 @@
+{
+  "title": "deployment-collection",
+  "type": "object",
+  "x-tags": [
+    "deployments"
+  ],
+  "x-examples": {},
+  "properties": {
+    "@context": {
+      "type": "array",
+      "uniqueItems": false,
+      "items": {}
+    },
+    "@id": {
+      "type": "string",
+      "format": "uri"
+    },
+    "member": {
+      "type": "array",
+      "items": {
+        "$ref": "./deployment.v1.json"
+      }
+    }
+  }
+}

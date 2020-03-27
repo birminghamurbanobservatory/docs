@@ -19,15 +19,54 @@ paths:
       operationId: get-sensors
   /deployments:
     get:
-      summary: Get Sensors
-      tags: []
-      responses: {}
+      summary: Get Deployments
+      tags:
+        - deployments
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/deployment-collection.v1.json
       operationId: get-deployments
+      description: Retrieves a collection of deployments.
     post:
-      summary: ''
+      summary: Create Deployment
       operationId: post-deployments
       responses:
         '200':
           description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/deployment-create.v1.json
+        description: "When creating a deployment you have the option to specifically define the `id`. If it's not defined, the `id` will be generated from the `name`."
+  '/deployments/{deploymentId}':
+    parameters:
+      - schema:
+          type: string
+        name: deploymentId
+        in: path
+        required: true
+    get:
+      summary: Get Deployment
+      tags:
+        - deployments
+      responses: {}
+      operationId: get-deployments-deploymentId
+    patch:
+      summary: Update Deployment
+      tags:
+        - deployments
+      responses: {}
+      operationId: patch-deployments-deploymentId
+    delete:
+      summary: Delete Deployment
+      tags:
+        - deployments
+      responses: {}
+      operationId: delete-deployments-deploymentId
 components:
   schemas: {}
