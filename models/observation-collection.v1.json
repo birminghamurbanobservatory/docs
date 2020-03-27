@@ -1,0 +1,12 @@
+{
+  "title": "observation-collection",
+  "type": "object",
+  "x-tags": [
+    "observations"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    }
+  }
+}

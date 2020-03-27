@@ -1,0 +1,77 @@
+{
+  "title": "observation-in-collection",
+  "type": "object",
+  "x-tags": [
+    "observations"
+  ],
+  "properties": {
+    "@id": {
+      "type": "string"
+    },
+    "@type": {
+      "type": "string"
+    },
+    "madeBySensor": {
+      "type": "string"
+    },
+    "hasResult": {
+      "type": "object",
+      "required": [
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "type": [
+            "string",
+            "number",
+            "object",
+            "boolean"
+          ]
+        },
+        "flag": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "inDeployment": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "resultTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "hasFeatureOfInterest": {
+      "type": "string"
+    },
+    "observedProperty": {
+      "type": "string"
+    },
+    "discipline": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "usedProcedure": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "location": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "@id",
+    "madeBySensor",
+    "hasResult",
+    "resultTime"
+  ]
+}

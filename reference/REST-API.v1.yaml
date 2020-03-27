@@ -18,6 +18,7 @@ paths:
         '200':
           description: OK
       operationId: get-sensors
+      description: Get a selection of sensors.
   /deployments:
     get:
       summary: Get Deployments
@@ -136,6 +137,7 @@ paths:
                   name: My now public deployment
                   description: No longer visible by the public
                   public: false
+      description: Only defined users with a sufficient access level can update a deployment.
     delete:
       summary: Delete Deployment
       tags:
@@ -144,6 +146,70 @@ paths:
         '204':
           description: No Content
       operationId: delete-deployments-deploymentId
+      description: Only defined users with a sufficient access level can delete a deployment.
+  /platforms:
+    get:
+      summary: Get Platforms
+      tags: []
+      responses:
+        '200':
+          description: OK
+      operationId: get-platforms
+      description: Get a collection of platforms
+  '/platforms/{platformsId}':
+    parameters:
+      - schema:
+          type: string
+        name: platformsId
+        in: path
+        required: true
+    get:
+      summary: Get Platform
+      tags: []
+      responses:
+        '200':
+          description: OK
+      operationId: get-platforms-platformsId
+      description: Get a specific platform.
+  /observations:
+    get:
+      summary: Get Observations
+      tags:
+        - observations
+      responses:
+        '200':
+          description: OK
+      operationId: get-observations
+      description: Get a collection of observations.
+  '/observations/{observationId}':
+    parameters:
+      - schema:
+          type: string
+        name: observationId
+        in: path
+        required: true
+    get:
+      summary: Get Observation
+      tags:
+        - observations
+      responses:
+        '200':
+          description: OK
+      operationId: get-observations-observationId
+      description: Get a specific observation
+  '/sensors/{sensorId}':
+    parameters:
+      - schema:
+          type: string
+        name: sensorId
+        in: path
+        required: true
+    get:
+      summary: Get Observation
+      tags:
+        - sensors
+      responses: {}
+      operationId: get-sensors-sensorId
 components:
   schemas: {}
   securitySchemes: {}
