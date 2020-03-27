@@ -94,6 +94,8 @@ paths:
                   public: false
         description: "When creating a deployment you have the option to specifically define the `id`. If it's not defined, the `id` will be generated from the `name`."
       description: 'Only users that have been granted the special permission `create:deployment` can create a deployment.'
+      tags:
+        - deployments
   '/deployments/{deploymentId}':
     parameters:
       - schema:
@@ -150,7 +152,8 @@ paths:
   /platforms:
     get:
       summary: Get Platforms
-      tags: []
+      tags:
+        - platforms
       responses:
         '200':
           description: OK
@@ -165,7 +168,8 @@ paths:
         required: true
     get:
       summary: Get Platform
-      tags: []
+      tags:
+        - platforms
       responses:
         '200':
           description: OK
