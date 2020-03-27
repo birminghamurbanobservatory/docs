@@ -5,13 +5,14 @@
     "deployments"
   ],
   "properties": {
-    "updatedAt": {
+    "@id": {
       "type": "string",
-      "format": "date-time"
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "maxLength": 44,
+      "minLength": 1
     },
-    "createdAt": {
-      "type": "string",
-      "format": "date-time"
+    "@type": {
+      "type": "string"
     },
     "name": {
       "type": "string",
@@ -24,14 +25,13 @@
     "public": {
       "type": "boolean"
     },
-    "@type": {
-      "type": "string"
-    },
-    "@id": {
+    "updatedAt": {
       "type": "string",
-      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
-      "maxLength": 44,
-      "minLength": 1
+      "format": "date-time"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
     }
   },
   "required": [
