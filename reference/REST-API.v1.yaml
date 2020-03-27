@@ -205,7 +205,7 @@ paths:
         in: path
         required: true
     get:
-      summary: Get Observation
+      summary: Get Sensors
       tags:
         - sensors
       responses: {}
