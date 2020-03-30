@@ -1,0 +1,43 @@
+{
+  "title": "location-in-observation",
+  "type": "object",
+  "x-tags": [
+    "locations"
+  ],
+  "properties": {
+    "@id": {
+      "type": "string"
+    },
+    "geometry": {
+      "type": "object",
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Point",
+            "LineString",
+            "Polygon"
+          ]
+        },
+        "coordinates": {
+          "type": "array",
+          "items": {}
+        }
+      }
+    },
+    "validAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "@id",
+    "geometry",
+    "validAt"
+  ],
+  "description": "The location object within an observation."
+}
