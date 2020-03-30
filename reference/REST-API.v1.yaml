@@ -183,8 +183,94 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/observation-collection.v1.json
       operationId: get-observations
       description: Get a collection of observations.
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: madeBySensor
+        - schema:
+            type: array
+          in: query
+          name: madeBySensor__in
+          description: ''
+        - schema:
+            type: string
+          in: query
+          name: observedProperty
+        - schema:
+            type: string
+          in: query
+          name: unit
+        - schema:
+            type: array
+          in: query
+          name: unit__in
+        - schema:
+            type: boolean
+          in: query
+          name: unit__exists
+        - schema:
+            type: string
+          in: query
+          name: hasFeatureOfInterest
+        - schema:
+            type: string
+          in: query
+          name: discipline__includes
+        - schema:
+            type: string
+          in: query
+          name: inDeployment
+        - schema:
+            type: string
+          in: query
+          name: inDeployment__in
+        - schema:
+            type: string
+          in: query
+          name: ancestorPlatform
+        - schema:
+            type: string
+          in: query
+          name: ancestorPlatform__includes
+        - schema:
+            type: string
+          in: query
+          name: resultTime__gt
+        - schema:
+            type: string
+          in: query
+          name: resultTime_gte
+        - schema:
+            type: string
+          in: query
+          name: resultTime_lt
+        - schema:
+            type: string
+          in: query
+          name: resultTime_lte
+        - schema:
+            type: boolean
+          in: query
+          name: flag_exists
+        - schema:
+            type: number
+          in: query
+          name: limit
+        - schema:
+            type: number
+          in: query
+          name: offset
+        - schema:
+            type: string
+          in: query
+          name: onePer
   '/observations/{observationId}':
     parameters:
       - schema:

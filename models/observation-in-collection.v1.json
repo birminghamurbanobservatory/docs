@@ -28,6 +28,9 @@
             "boolean"
           ]
         },
+        "unit": {
+          "type": "string"
+        },
         "flag": {
           "type": "array",
           "items": {

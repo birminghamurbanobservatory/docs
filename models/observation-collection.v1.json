@@ -5,8 +5,30 @@
     "observations"
   ],
   "properties": {
-    "id": {
-      "type": "string"
+    "@context": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "@id": {
+      "type": "string",
+      "format": "uri"
+    },
+    "member": {
+      "type": "array",
+      "items": {
+        "$ref": "./observation-in-collection.v1.json"
+      }
+    },
+    "meta": {
+      "type": "object"
     }
-  }
+  },
+  "required": [
+    "@context",
+    "@id",
+    "member"
+  ]
 }

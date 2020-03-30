@@ -4,7 +4,6 @@
   "x-tags": [
     "deployments"
   ],
-  "x-examples": {},
   "properties": {
     "@context": {
       "type": "array",
