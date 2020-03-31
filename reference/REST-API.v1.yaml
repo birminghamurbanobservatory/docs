@@ -160,7 +160,7 @@ paths:
       operationId: get-platforms
       description: Get a collection of platforms
     post:
-      summary: ''
+      summary: 'Create Platform'
       operationId: post-platforms
       responses:
         '200':
@@ -171,6 +171,7 @@ paths:
                 $ref: 'https://api.birminghamurbanobservatory.com/schemas/create-platform-body.schema.json'
       tags:
         - platforms
+      description: ''
   '/platforms/{platformsId}':
     parameters:
       - schema:
