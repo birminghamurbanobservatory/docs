@@ -80,7 +80,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ../models/deployment-create.v1.json
+              $ref: 'https://api.birminghamurbanobservatory.com/schemas/create-deployment-body.schema.json'
             examples:
               example-1:
                 value:
