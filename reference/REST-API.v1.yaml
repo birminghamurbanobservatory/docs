@@ -169,6 +169,8 @@ paths:
             application/json:
               schema:
                 $ref: 'https://api.birminghamurbanobservatory.com/schemas/create-platform-body.schema.json'
+      tags:
+        - platforms
   '/platforms/{platformsId}':
     parameters:
       - schema:
