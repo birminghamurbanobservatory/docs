@@ -186,6 +186,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/platform-get-response-body.schema.json'
       operationId: get-platforms-platformsId
       description: Get a specific platform.
   /observations:
