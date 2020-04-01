@@ -149,49 +149,6 @@ paths:
           description: No Content
       operationId: delete-deployments-deploymentId
       description: Only defined users with a sufficient access level can delete a deployment.
-  /platforms:
-    get:
-      summary: Get Platforms
-      tags:
-        - platforms
-      responses:
-        '200':
-          description: OK
-      operationId: get-platforms
-      description: Get a collection of platforms
-    post:
-      summary: Create Platform
-      operationId: post-platforms
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: 'https://api.birminghamurbanobservatory.com/schemas/platform-create-request-body.json'
-      tags:
-        - platforms
-      description: ''
-  '/platforms/{platformsId}':
-    parameters:
-      - schema:
-          type: string
-        name: platformsId
-        in: path
-        required: true
-    get:
-      summary: Get Platform
-      tags:
-        - platforms
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: 'https://api.birminghamurbanobservatory.com/schemas/platform-get-response-body.json'
-      operationId: get-platforms-platformsId
-      description: Get a specific platform.
   /observations:
     get:
       summary: Get Observations
