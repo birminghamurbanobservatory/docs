@@ -278,6 +278,32 @@ paths:
         - sensors
       responses: {}
       operationId: get-sensors-sensorId
+  /platforms:
+    get:
+      summary: Get Platforms
+      tags:
+        - platforms
+      responses:
+        '200':
+          description: OK
+      operationId: get-platforms
+    post:
+      summary: Create Platform
+      tags:
+        - platforms
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/platform-get-response-body.json'
+      operationId: post-platforms
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: 'https://api.birminghamurbanobservatory.com/schemas/platform-create-request-body.json'
 components:
   schemas: {}
   securitySchemes: {}
