@@ -80,7 +80,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: 'https://api.birminghamurbanobservatory.com/schemas/create-deployment-body.schema.json'
+              $ref: 'https://api.birminghamurbanobservatory.com/schemas/deployment-create-request-body.schema.json'
             examples:
               example-1:
                 value:
@@ -113,7 +113,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/deployment-response.v1.json
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/deployment-get-response-body.json'
       operationId: get-deployments-deploymentId
     patch:
       summary: Update Deployment
@@ -160,7 +160,7 @@ paths:
       operationId: get-platforms
       description: Get a collection of platforms
     post:
-      summary: 'Create Platform'
+      summary: Create Platform
       operationId: post-platforms
       responses:
         '200':
@@ -168,7 +168,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'https://api.birminghamurbanobservatory.com/schemas/create-platform-body.schema.json'
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/platform-create-request-body.schema.json'
       tags:
         - platforms
       description: ''
