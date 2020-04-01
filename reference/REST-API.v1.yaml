@@ -56,7 +56,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/deployment-response.v1.json
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/deployment-get-response.body.json'
         '400':
           description: Bad Request
           content:
@@ -113,7 +113,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'https://api.birminghamurbanobservatory.com/schemas/deployment-get-response-body.json'
+                $ref: ../models/deployment-collection.v1.json
       operationId: get-deployments-deploymentId
     patch:
       summary: Update Deployment
@@ -125,7 +125,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/deployment-response.v1.json
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/deployment-get-response.body.json'
               examples: {}
       operationId: patch-deployments-deploymentId
       requestBody:
