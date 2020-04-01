@@ -291,6 +291,35 @@ paths:
               schema:
                 $ref: 'https://api.birminghamurbanobservatory.com/schemas/platforms-get-response-body.json'
       operationId: get-platforms
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: id__begins
+        - schema:
+            type: string
+          in: query
+          name: inDeployment
+        - schema:
+            type: array
+          in: query
+          name: inDeployment__in
+        - schema:
+            type: string
+          in: query
+          name: isHostedBy
+        - schema:
+            type: array
+          in: query
+          name: isHostedBy__in
+        - schema:
+            type: boolean
+          in: query
+          name: isHostedBy__exists
+        - schema:
+            type: string
+          in: query
+          name: ancestor__Platforms__includes
     post:
       summary: Create Platform
       tags:
