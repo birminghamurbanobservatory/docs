@@ -80,7 +80,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: 'https://api.birminghamurbanobservatory.com/schemas/deployment-create-request-body.schema.json'
+              $ref: 'https://api.birminghamurbanobservatory.com/schemas/deployment-create-request-body.json'
             examples:
               example-1:
                 value:
@@ -168,7 +168,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'https://api.birminghamurbanobservatory.com/schemas/platform-create-request-body.schema.json'
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/platform-create-request-body.json'
       tags:
         - platforms
       description: ''
@@ -189,7 +189,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'https://api.birminghamurbanobservatory.com/schemas/platform-get-response-body.schema.json'
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/platform-get-response-body.json'
       operationId: get-platforms-platformsId
       description: Get a specific platform.
   /observations:
