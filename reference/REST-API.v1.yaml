@@ -289,7 +289,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'https://api.birminghamurbanobservatory.com/schemas/platforms-get-response-body.json'
+                $ref: ../models/platforms-get-response-body.v1.json
       operationId: get-platforms
       parameters:
         - schema:
