@@ -69,6 +69,12 @@
     },
     "location": {
       "$ref": "./location-in-observation.v1.json"
+    },
+    "ancestorPlatforms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   },
   "required": [

@@ -16,6 +16,12 @@
       "type": "string",
       "format": "uri"
     },
+    "@type": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "member": {
       "type": "array",
       "items": {
@@ -23,7 +29,42 @@
       }
     },
     "meta": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "object",
+          "properties": {
+            "@id": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        },
+        "next": {
+          "type": "object",
+          "properties": {
+            "@id": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        },
+        "previous": {
+          "type": "object",
+          "properties": {
+            "@id": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        },
+        "count": {
+          "type": "number"
+        },
+        "total": {
+          "type": "number"
+        }
+      }
     }
   },
   "required": [

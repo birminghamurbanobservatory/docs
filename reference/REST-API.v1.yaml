@@ -245,6 +245,22 @@ paths:
             type: string
           in: query
           name: onePer
+        - schema:
+            type: string
+            enum:
+              - timeseries
+              - resultTime
+            default: resultTime
+          in: query
+          name: sortBy
+        - schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: desc
+          in: query
+          name: sortOrder
   '/observations/{observationId}':
     parameters:
       - schema:
