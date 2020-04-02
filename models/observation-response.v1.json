@@ -32,7 +32,7 @@
             "boolean"
           ]
         },
-        "flag": {
+        "flags": {
           "type": "array",
           "items": {
             "type": "string"
@@ -47,12 +47,12 @@
       "type": "string",
       "format": "date-time"
     },
-    "inDeployment": {
+    "inDeployments": {
       "type": "array",
       "items": {
         "type": "string"
       }
-    }, 
+    },
     "location": {
       "$ref": "./location-in-observation.v1.json"
     },
@@ -62,24 +62,24 @@
     "hasFeatureOfInterest": {
       "type": "string"
     },
-    "discipline": {
+    "disciplines": {
       "type": "array",
       "items": {
         "type": "string"
       }
     },
-    "usedProcedure": {
+    "usedProcedures": {
       "type": "array",
       "items": {
         "type": "string"
       }
-    }   
+    }
   },
   "required": [
-    "resultTime",
-    "hasResult",
-    "madeBySensor",
+    "@context",
     "@id",
-    "@context"
+    "madeBySensor",
+    "hasResult",
+    "resultTime"
   ]
 }

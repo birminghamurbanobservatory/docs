@@ -28,7 +28,7 @@
             "boolean"
           ]
         },
-        "flag": {
+        "flags": {
           "type": "array",
           "items": {
             "type": "string"
@@ -39,7 +39,7 @@
         }
       }
     },
-    "inDeployment": {
+    "inDeployments": {
       "type": "array",
       "items": {
         "type": "string"
@@ -55,13 +55,13 @@
     "observedProperty": {
       "type": "string"
     },
-    "discipline": {
+    "disciplines": {
       "type": "array",
       "items": {
         "type": "string"
       }
     },
-    "usedProcedure": {
+    "usedProcedures": {
       "type": "array",
       "items": {
         "type": "string"
