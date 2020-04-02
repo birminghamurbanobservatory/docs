@@ -330,7 +330,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'https://api.birminghamurbanobservatory.com/schemas/platform-create-request-body.json'
+                $ref: ../models/platform-get-response-body.v1.json
       operationId: post-platforms
       requestBody:
         content:
