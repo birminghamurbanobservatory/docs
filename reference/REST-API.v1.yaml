@@ -196,7 +196,7 @@ paths:
         - schema:
             type: string
           in: query
-          name: discipline__includes
+          name: disciplines__includes
         - schema:
             type: string
           in: query
