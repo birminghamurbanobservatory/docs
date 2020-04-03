@@ -220,19 +220,19 @@ paths:
         - schema:
             type: string
           in: query
-          name: resultTime_gte
+          name: resultTime__gte
         - schema:
             type: string
           in: query
-          name: resultTime_lt
+          name: resultTime__lt
         - schema:
             type: string
           in: query
-          name: resultTime_lte
+          name: resultTime__lte
         - schema:
             type: boolean
           in: query
-          name: flag_exists
+          name: flag__exists
         - schema:
             type: number
           in: query
