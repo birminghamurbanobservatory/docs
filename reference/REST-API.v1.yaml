@@ -353,6 +353,31 @@ paths:
           application/json:
             schema:
               $ref: 'https://api.birminghamurbanobservatory.com/schemas/platform-create-request-body.json'
+  '/platforms/{platformId}':
+    parameters:
+      - schema:
+          type: string
+        name: platformId
+        in: path
+        required: true
+    get:
+      summary: Get Platform
+      tags:
+        - platforms
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/platform-get-response-body.v1.json
+      operationId: get-platforms-platformId
+      parameters:
+        - schema:
+            type: boolean
+          in: query
+          name: nest
+          description: When true a hosts array is added to the response with any hosted platforms or sensors
 components:
   schemas: {}
   securitySchemes: {}
