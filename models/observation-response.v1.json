@@ -39,7 +39,7 @@
           }
         },
         "unit": {
-          "type": "string"
+          "$ref": "./unit-object.v1.json"
         }
       }
     },
@@ -57,7 +57,7 @@
       "$ref": "./location-in-observation.v1.json"
     },
     "observedProperty": {
-      "type": "string"
+      "$ref": "./observed-property-object.v1.json"
     },
     "hasFeatureOfInterest": {
       "type": "string"
@@ -65,7 +65,7 @@
     "disciplines": {
       "type": "array",
       "items": {
-        "type": "string"
+        "$ref": "./discipline-object.v1.json"
       }
     },
     "usedProcedures": {
@@ -81,5 +81,6 @@
     "madeBySensor",
     "hasResult",
     "resultTime"
-  ]
+  ],
+  "description": ""
 }

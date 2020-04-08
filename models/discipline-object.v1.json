@@ -1,0 +1,21 @@
+{
+  "title": "discipline-object",
+  "type": "object",
+  "x-tags": [
+    "observations"
+  ],
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "e.g. \"AtmosphericChemistry\""
+    },
+    "label": {
+      "type": "string",
+      "description": "e.g. \"Atmospheric Chemistry\""
+    }
+  },
+  "required": [
+    "@id",
+    "label"
+  ]
+}

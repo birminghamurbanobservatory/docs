@@ -1,0 +1,17 @@
+{
+  "title": "observed-property-object",
+  "type": "object",
+  "x-tags": [
+    "observations"
+  ],
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "e.g. \"RelativeHumidity\""
+    },
+    "label": {
+      "type": "string",
+      "description": "e.g. \"Relative Humidity\""
+    }
+  }
+}
