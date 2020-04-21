@@ -331,7 +331,7 @@ paths:
         - schema:
             type: string
           in: query
-          name: ancestor__Platforms__includes
+          name: ancestorPlatforms__includes
     post:
       summary: Create Platform
       tags:
