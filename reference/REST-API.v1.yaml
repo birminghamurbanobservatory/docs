@@ -313,13 +313,9 @@ paths:
           in: query
           name: id__begins
         - schema:
-            type: string
-          in: query
-          name: inDeployment
-        - schema:
             type: array
           in: query
-          name: inDeployment__in
+          name: inDeployments__includes
         - schema:
             type: string
           in: query
