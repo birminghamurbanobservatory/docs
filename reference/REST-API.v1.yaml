@@ -41,12 +41,41 @@ paths:
         - schema:
             type: boolean
           in: query
-          name: includeAllPublic
+          name: mineOnly
         - schema:
             type: string
           in: query
           name: id__begins
           description: Useful for autocomplete form inputs
+        - schema:
+            type: integer
+            maximum: 1000
+            minimum: 0
+          in: query
+          name: limit
+        - schema:
+            type: integer
+            minimum: 0
+          in: query
+          name: offset
+        - schema:
+            type: string
+            enum:
+              - id
+          in: query
+          name: sortBy
+        - schema:
+            type: string
+            enum:
+              - asc
+              - desc
+          in: query
+          name: sortOrder
+        - schema:
+            type: string
+          in: query
+          name: search
+          description: 'Searches for matching words in the id or name. Tip: provide whole words.'
     post:
       summary: Create Deployment
       operationId: post-deployments
