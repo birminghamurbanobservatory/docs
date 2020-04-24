@@ -4,6 +4,7 @@
   "x-tags": [
     "locations"
   ],
+  "description": "The location object within an observation.",
   "properties": {
     "@id": {
       "type": "string"
@@ -29,15 +30,23 @@
         }
       }
     },
-    "validAt": {
+    "properties": {
+      "type": "object",
+      "properties": {
+        "validAt": {
+          "type": "string"
+        }
+      }
+    },
+    "type": {
       "type": "string",
-      "format": "date-time"
+      "enum": [
+        "Feature"
+      ]
     }
   },
   "required": [
     "@id",
-    "geometry",
-    "validAt"
-  ],
-  "description": "The location object within an observation."
+    "geometry"
+  ]
 }
