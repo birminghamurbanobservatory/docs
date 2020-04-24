@@ -17,6 +17,11 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/sensors-get-response.body.json'
+          headers: {}
       operationId: get-sensors
       description: Get a selection of sensors.
   /deployments:
@@ -142,7 +147,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/deployment-collection.v1.json
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/deployment-get-response.body.json'
       operationId: get-deployments-deploymentId
     patch:
       summary: Update Deployment
@@ -321,7 +326,13 @@ paths:
       summary: Get Sensors
       tags:
         - sensors
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/sensor-get-response-body.json'
       operationId: get-sensors-sensorId
   /platforms:
     get:
@@ -334,7 +345,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/platforms-get-response-body.v1.json
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/platforms-get-response-body.json'
       operationId: get-platforms
       parameters:
         - schema:
