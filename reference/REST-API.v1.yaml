@@ -24,6 +24,80 @@ paths:
           headers: {}
       operationId: get-sensors
       description: Get a selection of sensors.
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: id__begins
+        - schema:
+            type: array
+          in: query
+          name: id__in
+          description: comma separated list of sensor IDs for when you require a specific set of sensor.
+        - schema:
+            type: string
+          in: query
+          name: hasDeployment
+        - schema:
+            type: array
+          in: query
+          name: hasDeployment__in
+          description: comma separated list of deployment IDs
+        - schema:
+            type: boolean
+          in: query
+          name: hasDeployment__exists
+        - schema:
+            type: string
+          in: query
+          name: isHostedBy
+        - schema:
+            type: boolean
+          in: query
+          name: isHostedBy_exists
+        - schema:
+            type: string
+          in: query
+          name: permanentHost
+        - schema:
+            type: boolean
+          in: query
+          name: permanentHost__exists
+        - schema:
+            type: string
+          in: query
+          name: search
+          description: "Search for matching words within the sensor's id and name. Use full words for best results."
+        - schema:
+            type: integer
+            maximum: 1000
+            default: 100
+            minimum: 0
+          in: query
+          name: limit
+          description: For pagination
+        - schema:
+            type: integer
+            minimum: 0
+            default: 0
+          in: query
+          name: offset
+          description: For pagination
+        - schema:
+            type: string
+            enum:
+              - id
+            default: id
+          in: query
+          name: sortBy
+        - schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: asc
+          in: query
+          name: sortOrder
   /deployments:
     get:
       summary: Get Deployments
@@ -58,11 +132,13 @@ paths:
             minimum: 0
           in: query
           name: limit
+          description: For pagination
         - schema:
             type: integer
             minimum: 0
           in: query
           name: offset
+          description: For pagination
         - schema:
             type: string
             enum:
@@ -74,6 +150,7 @@ paths:
             enum:
               - asc
               - desc
+            default: asc
           in: query
           name: sortOrder
         - schema:
@@ -81,6 +158,11 @@ paths:
           in: query
           name: search
           description: 'Searches for matching words in the id or name. Tip: provide whole words.'
+        - schema:
+            type: array
+          in: query
+          name: id__in
+          description: comma separated list of deployment IDs for when you require a specific set of deployments.
     post:
       summary: Create Deployment
       operationId: post-deployments
@@ -263,22 +345,32 @@ paths:
             type: string
           in: query
           name: resultTime__lte
+          description: Defaults to the time of the request
         - schema:
             type: boolean
           in: query
           name: flag__exists
         - schema:
-            type: number
+            type: integer
+            default: 100
+            maximum: 1000
+            minimum: 0
           in: query
           name: limit
         - schema:
-            type: number
+            type: integer
+            minimum: 0
+            default: 0
           in: query
           name: offset
         - schema:
             type: string
+            enum:
+              - sensor
+              - timeseries
           in: query
           name: onePer
+          description: 'Returns just one observation per sensor/timeseries. I.e. the most recent for each. A "timeseries" is a series of observations, all with the same common properties, i.e. exactly the same values for madeBySensor, observedProperty, usedProcedures, disciplines, unit, hasFeatureOfInterest, inDeployments and ancestorPlatforms.'
         - schema:
             type: string
             enum:
@@ -372,6 +464,46 @@ paths:
             type: string
           in: query
           name: ancestorPlatforms__includes
+        - schema:
+            type: array
+          in: query
+          name: id__in
+          description: comma separated list of platform IDs for when you require a specific set of platforms.
+        - schema:
+            type: boolean
+          in: query
+          name: nest
+          description: 'If true the hierachical nature of platform and sensor hosting will be conveyed by nesting platforms and sensors within each other. Look for a property called "hosts" (an array). When true the "limit" parameter limits the number of platform "trees" rather than individual platforms.'
+        - schema:
+            type: integer
+            maximum: 1000
+            minimum: 0
+            default: 100
+          in: query
+          name: limit
+          description: For pagination
+        - schema:
+            type: integer
+            default: 0
+            minimum: 0
+          in: query
+          name: offset
+          description: For pagination
+        - schema:
+            type: string
+            enum:
+              - id
+            default: id
+          in: query
+          name: sortBy
+        - schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: asc
+          in: query
+          name: sortOrder
     post:
       summary: Create Platform
       tags:
