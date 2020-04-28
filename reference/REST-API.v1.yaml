@@ -489,7 +489,7 @@ paths:
         in: path
         required: true
     get:
-      summary: Get Sensors
+      summary: Get Sensor
       tags:
         - sensors
       responses:
