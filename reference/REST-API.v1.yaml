@@ -387,6 +387,80 @@ paths:
             default: desc
           in: query
           name: sortOrder
+        - schema:
+            type: number
+            maximum: 90
+            minimum: -90
+          in: query
+          name: latitude__gt
+        - schema:
+            type: number
+            maximum: 90
+            minimum: -90
+          in: query
+          name: latitude__gte
+        - schema:
+            type: number
+            maximum: 90
+            minimum: -90
+          in: query
+          name: latitude__lt
+        - schema:
+            type: number
+            maximum: 90
+            minimum: -90
+          in: query
+          name: latitude__lte
+        - schema:
+            type: number
+            maximum: 180
+            minimum: -180
+          in: query
+          name: longitude__gt
+        - schema:
+            type: number
+            maximum: 180
+            minimum: -180
+          in: query
+          name: longitude__gte
+        - schema:
+            type: number
+            maximum: 180
+            minimum: -180
+          in: query
+          name: longitude__lt
+        - schema:
+            type: number
+            maximum: 180
+            minimum: -180
+          in: query
+          name: longitude__lte
+        - schema:
+            type: number
+          in: query
+          name: height__gt
+        - schema:
+            type: number
+          in: query
+          name: height__gte
+        - schema:
+            type: number
+          in: query
+          name: height__lt
+        - schema:
+            type: number
+          in: query
+          name: height__lte
+        - schema:
+            type: array
+          in: query
+          name: proximityCentre
+          description: 'proximityRadius must also be provided. Format: lon,lat e.g. proximityCentre=-1.9,52.5  '
+        - schema:
+            type: number
+          in: query
+          name: proximityRadius
+          description: In metres. proximityCentre must also be provided.
   '/observations/{observationId}':
     parameters:
       - schema:
