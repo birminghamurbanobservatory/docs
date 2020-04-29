@@ -75,6 +75,10 @@
       "items": {
         "type": "string"
       }
+    },
+    "inTimeseries": {
+      "type": "string",
+      "description": "The id of the timeseries this observation belongs to."
     }
   },
   "required": [
