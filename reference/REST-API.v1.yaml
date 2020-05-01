@@ -699,6 +699,63 @@ paths:
           in: query
           name: nest
           description: When true a hosts array is added to the response with any hosted platforms or sensors
+  /timeseries:
+    get:
+      summary: Get multiple timeseries
+      tags:
+        - timeseries
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+      operationId: get-timeseries
+      description: 'Each timeseries describes a series of observations with common properties. All observations within a timeseries will have exactly the same values for the following properties: madeBySensor, hasDeployment, hostedByPath, unit, hasFeatureOfInterest, observedProperty, disciplines, usedProcedures. Typically, at least for observations with a numeric value, you would plot each timeseries as a separate line on a line graph.'
+  '/timeseries/{timeseriesId}':
+    parameters:
+      - schema:
+          type: string
+        name: timeseriesId
+        in: path
+        required: true
+    get:
+      summary: Get a timeseries
+      tags:
+        - timeseries
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+      operationId: get-timeseries-timeseriesId
+      description: 'A timeseries describes a series of observations with common properties. All observations within a timeseries will have exactly the same values for the following properties: madeBySensor, hasDeployment, hostedByPath, unit, hasFeatureOfInterest, observedProperty, disciplines, usedProcedures.'
+  '/timeseries/{timeseriesId}/observations':
+    parameters:
+      - schema:
+          type: string
+        name: timeseriesId
+        in: path
+        required: true
+    get:
+      summary: Get timeseries observations
+      tags:
+        - timeseries
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+      operationId: get-timeseries-timeseriesId-observations
+      description: "Retrieves observations belonging to a specific timeseries. All observations within a timeseries have exactly the same values for the following properties: madeBySensor, hasDeployment, hostedByPath, unit, hasFeatureOfInterest, observedProperty, disciplines, usedProcedures. Therfore there's no need to include these properties for every single observation. By omitting these properties we can drastically reduce the amount of data that needs to be returned. This endpoint is ideal for getting a series of observations for plotting on a line graph (at least for observations whose value is numeric)."
 components:
   schemas: {}
   securitySchemes: {}
