@@ -710,8 +710,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties: {}
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/single-timeseries-get-response-body.json'
       operationId: get-timeseries
       description: 'Each timeseries describes a series of observations with common properties. All observations within a timeseries will have exactly the same values for the following properties: madeBySensor, hasDeployment, hostedByPath, unit, hasFeatureOfInterest, observedProperty, disciplines, usedProcedures. Typically, at least for observations with a numeric value, you would plot each timeseries as a separate line on a line graph.'
   '/timeseries/{timeseriesId}':
