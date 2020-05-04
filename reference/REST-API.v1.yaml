@@ -713,6 +713,112 @@ paths:
                 type: object
       operationId: get-timeseries
       description: 'Each timeseries describes a series of observations with common properties. All observations within a timeseries will have exactly the same values for the following properties: madeBySensor, hasDeployment, hostedByPath, unit, hasFeatureOfInterest, observedProperty, disciplines, usedProcedures. Typically, at least for observations with a numeric value, you would plot each timeseries as a separate line on a line graph.'
+      parameters:
+        - schema:
+            type: array
+          in: query
+          name: id__in
+          description: comma-separated list of timeseries IDs
+        - schema:
+            type: string
+          in: query
+          name: madeBySensor
+        - schema:
+            type: array
+          in: query
+          name: madeBySensor__in
+          description: comma-separated list of sensor IDs
+        - schema:
+            type: string
+          in: query
+          name: observedProperty
+        - schema:
+            type: string
+          in: query
+          name: unit
+        - schema:
+            type: array
+          in: query
+          name: unit__in
+          description: comma-separated list of unit IDs
+        - schema:
+            type: boolean
+          in: query
+          name: unit__exists
+        - schema:
+            type: string
+          in: query
+          name: hasFeatureOfInterest
+        - schema:
+            type: string
+          in: query
+          name: disciplines__includes
+        - schema:
+            type: string
+          in: query
+          name: hasDeployment
+        - schema:
+            type: array
+          in: query
+          name: hasDeployment__in
+          description: comma-separated list of deployment IDs
+        - schema:
+            type: string
+          in: query
+          name: ancestorPlatforms
+          description: 'For an exact match of the platform "tree". Dot-separated, e.g. parent-platform-id.child-platform-id'
+        - schema:
+            type: string
+          in: query
+          name: ancestorPlatforms__includes
+        - schema:
+            type: string
+            format: date-time
+          in: query
+          name: startDate__gt
+        - schema:
+            type: string
+            format: date-time
+          in: query
+          name: startDate__gte
+        - schema:
+            type: string
+            format: date-time
+          in: query
+          name: startDate__lt
+        - schema:
+            type: string
+            format: date-time
+          in: query
+          name: startDate__lte
+        - schema:
+            type: string
+            format: date-time
+          in: query
+          name: endDate__gt
+        - schema:
+            type: string
+            format: date-time
+          in: query
+          name: endDate__gte
+        - schema:
+            type: string
+            format: date-time
+          in: query
+          name: endDate__lt
+        - schema:
+            type: string
+            format: date-time
+          in: query
+          name: endDate__lte
+        - schema:
+            type: number
+          in: query
+          name: limit
+        - schema:
+            type: number
+          in: query
+          name: offset
   '/timeseries/{timeseriesId}':
     parameters:
       - schema:
