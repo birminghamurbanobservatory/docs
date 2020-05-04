@@ -10,8 +10,8 @@
       "description": "e.g. \"RelativeHumidity\""
     },
     "label": {
-      "type": "string",
-      "description": "e.g. \"Relative Humidity\""
+      "description": "e.g. \"Relative Humidity\"",
+      "type": "string"
     }
   }
 }
