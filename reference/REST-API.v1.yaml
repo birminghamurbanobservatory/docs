@@ -493,7 +493,7 @@ paths:
           name: aggregation
           description: 'E.g. aggregation=Instant or aggregation=Average '
         - schema:
-            type: string
+            type: array
           in: query
           name: aggregation__in
           description: 'E.g. aggregation__in=Instant,Average'
@@ -861,7 +861,7 @@ paths:
           name: aggregation
           description: 'E.g. aggregation=Instant or aggregation=Average '
         - schema:
-            type: string
+            type: array
           in: query
           name: aggregation__in
           description: 'E.g. aggregation__in=Instant,Average'
