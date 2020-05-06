@@ -461,6 +461,42 @@ paths:
           in: query
           name: proximityRadius
           description: In metres. proximityCentre must also be provided.
+        - schema:
+            type: number
+            minimum: 0
+          in: query
+          name: duration
+          description: filter by the duration property in the phenomenonTime object. In seconds.
+        - schema:
+            type: number
+            minimum: 0
+          in: query
+          name: duration__gt
+        - schema:
+            type: number
+            minimum: 0
+          in: query
+          name: duration__gte
+        - schema:
+            type: number
+            minimum: 0
+          in: query
+          name: duration__lt
+        - schema:
+            type: number
+            minimum: 0
+          in: query
+          name: duration__lte
+        - schema:
+            type: string
+          in: query
+          name: aggregation
+          description: 'E.g. aggregation=Instant or aggregation=Average '
+        - schema:
+            type: string
+          in: query
+          name: aggregation__in
+          description: 'E.g. aggregation__in=Instant,Average'
   '/observations/{observationId}':
     parameters:
       - schema:
@@ -819,6 +855,16 @@ paths:
             type: number
           in: query
           name: offset
+        - schema:
+            type: string
+          in: query
+          name: aggregation
+          description: 'E.g. aggregation=Instant or aggregation=Average '
+        - schema:
+            type: string
+          in: query
+          name: aggregation__in
+          description: 'E.g. aggregation__in=Instant,Average'
   '/timeseries/{timeseriesId}':
     parameters:
       - schema:
@@ -860,6 +906,157 @@ paths:
                 properties: {}
       operationId: get-timeseries-timeseriesId-observations
       description: "Retrieves observations belonging to a specific timeseries. All observations within a timeseries have exactly the same values for the following properties: madeBySensor, hasDeployment, hostedByPath, unit, hasFeatureOfInterest, observedProperty, disciplines, usedProcedures. Therfore there's no need to include these properties for every single observation. By omitting these properties we can drastically reduce the amount of data that needs to be returned. This endpoint is ideal for getting a series of observations for plotting on a line graph (at least for observations whose value is numeric)."
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: resultTime__gt
+        - schema:
+            type: string
+          in: query
+          name: resultTime__gte
+        - schema:
+            type: string
+          in: query
+          name: resultTime__lt
+        - schema:
+            type: string
+          in: query
+          name: resultTime__lte
+          description: Defaults to the time of the request
+        - schema:
+            type: boolean
+          in: query
+          name: flag__exists
+        - schema:
+            type: integer
+            default: 100
+            maximum: 1000
+            minimum: 0
+          in: query
+          name: limit
+        - schema:
+            type: integer
+            minimum: 0
+            default: 0
+          in: query
+          name: offset
+        - schema:
+            type: string
+            enum:
+              - timeseries
+              - resultTime
+            default: resultTime
+          in: query
+          name: sortBy
+        - schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: desc
+          in: query
+          name: sortOrder
+        - schema:
+            type: number
+            maximum: 90
+            minimum: -90
+          in: query
+          name: latitude__gt
+        - schema:
+            type: number
+            maximum: 90
+            minimum: -90
+          in: query
+          name: latitude__gte
+        - schema:
+            type: number
+            maximum: 90
+            minimum: -90
+          in: query
+          name: latitude__lt
+        - schema:
+            type: number
+            maximum: 90
+            minimum: -90
+          in: query
+          name: latitude__lte
+        - schema:
+            type: number
+            maximum: 180
+            minimum: -180
+          in: query
+          name: longitude__gt
+        - schema:
+            type: number
+            maximum: 180
+            minimum: -180
+          in: query
+          name: longitude__gte
+        - schema:
+            type: number
+            maximum: 180
+            minimum: -180
+          in: query
+          name: longitude__lt
+        - schema:
+            type: number
+            maximum: 180
+            minimum: -180
+          in: query
+          name: longitude__lte
+        - schema:
+            type: number
+          in: query
+          name: height__gt
+        - schema:
+            type: number
+          in: query
+          name: height__gte
+        - schema:
+            type: number
+          in: query
+          name: height__lt
+        - schema:
+            type: number
+          in: query
+          name: height__lte
+        - schema:
+            type: array
+          in: query
+          name: proximityCentre
+          description: 'proximityRadius must also be provided. Format: lon,lat e.g. proximityCentre=-1.9,52.5  '
+        - schema:
+            type: number
+          in: query
+          name: proximityRadius
+          description: In metres. proximityCentre must also be provided.
+        - schema:
+            type: number
+            minimum: 0
+          in: query
+          name: duration
+          description: filter by the duration property in the phenomenonTime object. In seconds.
+        - schema:
+            type: number
+            minimum: 0
+          in: query
+          name: duration__gt
+        - schema:
+            type: number
+            minimum: 0
+          in: query
+          name: duration__gte
+        - schema:
+            type: number
+            minimum: 0
+          in: query
+          name: duration__lt
+        - schema:
+            type: number
+            minimum: 0
+          in: query
+          name: duration__lte
 components:
   schemas: {}
   securitySchemes: {}
