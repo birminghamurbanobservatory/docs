@@ -902,8 +902,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties: {}
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/timeseries-observations-get-response-body.json'
       operationId: get-timeseries-timeseriesId-observations
       description: "Retrieves observations belonging to a specific timeseries. All observations within a timeseries have exactly the same values for the following properties: madeBySensor, hasDeployment, hostedByPath, unit, hasFeatureOfInterest, observedProperty, disciplines, usedProcedures. Therfore there's no need to include these properties for every single observation. By omitting these properties we can drastically reduce the amount of data that needs to be returned. This endpoint is ideal for getting a series of observations for plotting on a line graph (at least for observations whose value is numeric)."
       parameters:
