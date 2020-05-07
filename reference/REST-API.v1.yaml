@@ -472,21 +472,25 @@ paths:
             minimum: 0
           in: query
           name: duration__gt
+          description: in seconds
         - schema:
             type: number
             minimum: 0
           in: query
           name: duration__gte
+          description: in seconds
         - schema:
             type: number
             minimum: 0
           in: query
           name: duration__lt
+          description: in seconds
         - schema:
             type: number
             minimum: 0
           in: query
           name: duration__lte
+          description: in seconds
         - schema:
             type: string
           in: query
@@ -1041,21 +1045,25 @@ paths:
             minimum: 0
           in: query
           name: duration__gt
+          description: in seconds
         - schema:
             type: number
             minimum: 0
           in: query
           name: duration__gte
+          description: in seconds
         - schema:
             type: number
             minimum: 0
           in: query
           name: duration__lt
+          description: in seconds
         - schema:
             type: number
             minimum: 0
           in: query
           name: duration__lte
+          description: in seconds
 components:
   schemas: {}
   securitySchemes: {}
