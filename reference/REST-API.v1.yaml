@@ -1110,7 +1110,8 @@ paths:
         required: true
     get:
       summary: Get Unit
-      tags: []
+      tags:
+        - units
       responses:
         '200':
           description: OK
@@ -1199,7 +1200,8 @@ paths:
         required: true
     get:
       summary: Get Discipline
-      tags: []
+      tags:
+        - disciplines
       responses:
         '200':
           description: OK
