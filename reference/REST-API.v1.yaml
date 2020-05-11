@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: REST API
+  title: Birmingham Urban Observatory REST API
   version: '1.0'
   contact:
     name: Bham Urban Obs Team
