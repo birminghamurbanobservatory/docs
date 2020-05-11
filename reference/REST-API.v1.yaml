@@ -1064,6 +1064,34 @@ paths:
           in: query
           name: duration__lte
           description: in seconds
+  /observable-properties:
+    get:
+      summary: Get Observable Properties
+      tags:
+        - observable properties
+      responses:
+        '200':
+          description: OK
+      operationId: get-observable-properties
+  '/observable-properties/{observablePropertyId}':
+    parameters:
+      - schema:
+          type: string
+        name: observablePropertyId
+        in: path
+        required: true
+    get:
+      summary: Get Observable Property
+      tags:
+        - observable properties
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/observable-property-get-response-body.json'
+      operationId: get-observable-properties-observablePropertyId
 components:
   schemas: {}
   securitySchemes: {}
