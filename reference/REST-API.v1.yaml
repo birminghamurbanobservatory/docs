@@ -1092,6 +1092,150 @@ paths:
               schema:
                 $ref: 'https://api.birminghamurbanobservatory.com/schemas/observable-property-get-response-body.json'
       operationId: get-observable-properties-observablePropertyId
+  /units:
+    get:
+      summary: Get Units
+      tags:
+        - units
+      responses:
+        '200':
+          description: OK
+      operationId: get-units
+  '/units/{unitId}':
+    parameters:
+      - schema:
+          type: string
+        name: unitId
+        in: path
+        required: true
+    get:
+      summary: Get Unit
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/unit-get-response-body.json'
+      operationId: get-units-unitId
+  /features-of-interest:
+    get:
+      summary: Get Features of Interest
+      tags:
+        - features of interest
+      responses:
+        '200':
+          description: OK
+      operationId: get-features-of-interest
+  '/features-of-interest/{featureOfInterestId}':
+    parameters:
+      - schema:
+          type: string
+        name: featureOfInterestId
+        in: path
+        required: true
+    get:
+      summary: Get Feature of Interest
+      tags:
+        - features of interest
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/feature-of-interest-get-response-body.json'
+      operationId: get-features-of-interest-featureOfInterestId
+      description: ''
+  /aggregations:
+    get:
+      summary: Get Aggregations
+      tags:
+        - aggregations
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+      operationId: get-aggregations
+  '/aggregations/{aggregationId}':
+    parameters:
+      - schema:
+          type: string
+        name: aggregationId
+        in: path
+        required: true
+    get:
+      summary: Get Aggregation
+      tags:
+        - aggregations
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/aggregation-get-response-body.json'
+      operationId: get-aggregations-aggregationId
+  /disciplines:
+    get:
+      summary: Get Disciplines
+      tags:
+        - disciplines
+      responses:
+        '200':
+          description: OK
+      operationId: get-disciplines
+  '/disciplines/{disciplineId}':
+    parameters:
+      - schema:
+          type: string
+        name: disciplineId
+        in: path
+        required: true
+    get:
+      summary: Get Discipline
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/discipline-get-response-body.json'
+      operationId: get-disciplines-disciplineId
+  /procedures:
+    get:
+      summary: Get Procedures
+      tags:
+        - procedures
+      responses:
+        '200':
+          description: OK
+      operationId: get-procedures
+  '/procedures/{procedureId}':
+    parameters:
+      - schema:
+          type: string
+        name: procedureId
+        in: path
+        required: true
+    get:
+      summary: Get Procedure
+      tags:
+        - procedures
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/procedure-get-response-body.json'
+      operationId: get-procedures-procedureId
 components:
   schemas: {}
   securitySchemes: {}
