@@ -109,7 +109,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/deployment-collection.v1.json
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/deployments-get-response-body.json'
       operationId: get-deployments
       description: Retrieves a collection of deployments.
       parameters:
@@ -178,20 +178,20 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/error-response.v1.json
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/error-response-body.json'
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: ../models/error-response.v1.json
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/error-response-body.json'
               examples: {}
         '403':
           description: Forbidden
           content:
             application/json:
               schema:
-                $ref: ../models/error-response.v1.json
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/error-response-body.json'
       requestBody:
         content:
           application/json:
@@ -248,7 +248,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ../models/deployment-updates.v1.json
+              $ref: 'https://api.birminghamurbanobservatory.com/schemas/deployment-update-request-body.json'
             examples:
               example-1:
                 value:
@@ -276,7 +276,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/observation-collection.v1.json
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/observations-get-response-body.json'
       operationId: get-observations
       description: Get a collection of observations.
       parameters:
@@ -518,7 +518,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/observation-response.v1.json
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/observation-get-response-body.json'
       operationId: get-observations-observationId
       description: Get a specific observation
   '/sensors/{sensorId}':
@@ -1072,6 +1072,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/observable-properties-get-response-body.json'
       operationId: get-observable-properties
   '/observable-properties/{observablePropertyId}':
     parameters:
@@ -1100,6 +1104,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/units-get-response-body.json'
       operationId: get-units
   '/units/{unitId}':
     parameters:
@@ -1128,6 +1136,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/features-of-interest-get-response-body.json'
       operationId: get-features-of-interest
   '/features-of-interest/{featureOfInterestId}':
     parameters:
@@ -1160,8 +1172,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties: {}
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/aggregations-get-response-body.json'
       operationId: get-aggregations
   '/aggregations/{aggregationId}':
     parameters:
@@ -1190,6 +1201,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/disciplines-get-response-body.json'
       operationId: get-disciplines
   '/disciplines/{disciplineId}':
     parameters:
@@ -1218,6 +1233,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/procedures-get-response-body.json'
       operationId: get-procedures
   '/procedures/{procedureId}':
     parameters:
