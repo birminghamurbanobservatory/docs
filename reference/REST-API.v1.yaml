@@ -504,6 +504,12 @@ paths:
           in: query
           name: aggregation__in
           description: 'E.g. aggregation__in=Instant,Average'
+        - schema:
+            type: array
+            uniqueItems: false
+          in: query
+          name: populate
+          description: 'Comma-separated list of properties to populated. Properties include observedProperty, unit and disciplines. E.g. "?populate=unit,discipline". Population expands the string value (i.e. the id) into an object with further information about the resource.'
   '/observations/{observationId}':
     parameters:
       - schema:
@@ -524,6 +530,12 @@ paths:
                 $ref: 'https://api.birminghamurbanobservatory.com/schemas/observation-get-response-body.json'
       operationId: get-observations-observationId
       description: Get a specific observation
+      parameters:
+        - schema:
+            type: array
+          in: query
+          name: populate
+          description: 'Comma-separated list of properties to populated. Properties include observedProperty, unit and disciplines. E.g. "?populate=unit,discipline". Population expands the string value (i.e. the id) into an object with further information about the resource.'
   '/sensors/{sensorId}':
     parameters:
       - schema:
