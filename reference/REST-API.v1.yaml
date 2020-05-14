@@ -510,6 +510,10 @@ paths:
           in: query
           name: populate
           description: 'Comma-separated list of properties to populated. Properties include observedProperty, unit and disciplines. E.g. "?populate=unit,discipline". Population expands the string value (i.e. the id) into an object with further information about the resource.'
+        - schema:
+            type: boolean
+          in: query
+          name: location__exists
   '/observations/{observationId}':
     parameters:
       - schema:
