@@ -758,6 +758,24 @@ paths:
           in: query
           name: nest
           description: When true a hosts array is added to the response with any hosted platforms or sensors
+    patch:
+      summary: Update Platform
+      operationId: patch-platforms-platformId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://api.birminghamurbanobservatory.com/schemas/platform-get-response-body.json'
+      description: Only users with sufficient authorisation can perform this operation.
+      tags:
+        - platforms
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: 'https://api.birminghamurbanobservatory.com/schemas/platform-update-request-body.json'
   /timeseries:
     get:
       summary: Get multiple timeseries
