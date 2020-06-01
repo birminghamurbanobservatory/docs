@@ -539,7 +539,7 @@ paths:
             type: array
           in: query
           name: populate
-          description: 'Comma-separated list of properties to populated. Properties include observedProperty, unit, aggregation, usedProcedures, hasFeatureOfInterest and disciplines. E.g. "?populate=unit,discipline". Population expands the string value (i.e. the id) into an object with further information about the resource.'
+          description: 'Comma-separated list of properties to populated. Properties include hasDeployment, ancestorPlatforms, madeBySensor, observedProperty, unit, aggregation, usedProcedures, hasFeatureOfInterest and disciplines. E.g. "?populate=unit,discipline". Population expands the string value (i.e. the id) into an object with further information about the resource.'
   '/sensors/{sensorId}':
     parameters:
       - schema:
