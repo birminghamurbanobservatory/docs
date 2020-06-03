@@ -514,6 +514,31 @@ paths:
             type: boolean
           in: query
           name: location__exists
+        - schema:
+            type: string
+            enum:
+              - number
+              - text
+              - boolean
+              - json
+          in: query
+          name: valueType
+          description: ''
+        - schema:
+            type: array
+          in: query
+          name: valueType__in
+          description: ''
+        - schema:
+            type: array
+          in: query
+          name: inTimeseries__in
+          description: "Limit to only certain timeseries by providing a comma-separated list of timeseries id's"
+        - schema:
+            type: array
+          in: query
+          name: inTimeseries__not__in
+          description: "Exclude certain timeseries by providing a comma-separated list of timeseries id's"
   '/observations/{observationId}':
     parameters:
       - schema:
