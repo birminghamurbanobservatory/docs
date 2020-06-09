@@ -539,6 +539,16 @@ paths:
           in: query
           name: inTimeseries__not__in
           description: "Exclude certain timeseries by providing a comma-separated list of timeseries id's"
+        - schema:
+            type: string
+          in: query
+          name: hasDeployment__not
+          description: Exclude observations from a particular deployment
+        - schema:
+            type: array
+          in: query
+          name: hasDeployment__not__in
+          description: "Exclude observations from a set of deployments. Provide as a common-separated list of id's."
   '/observations/{observationId}':
     parameters:
       - schema:
