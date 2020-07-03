@@ -549,6 +549,16 @@ paths:
           in: query
           name: hasDeployment__not__in
           description: "Exclude observations from a set of deployments. Provide as a common-separated list of id's."
+        - schema:
+            type: array
+          in: query
+          name: disciplines
+          description: "Get observations with this exact disciplines array. Provide as a comma-separated list, e.g. disciplines=meteorology,hydrology. Order isn't important."
+        - schema:
+            type: array
+          in: query
+          name: disciplines__not
+          description: "Exclude timeseries with this exact disciplines array. Provide as a comma-separated list, e.g. disciplines=meteorology,hydrology. Order isn't important."
   '/observations/{observationId}':
     parameters:
       - schema:
@@ -946,6 +956,16 @@ paths:
           in: query
           name: populate
           description: 'Comma-separated list of properties to populated. Properties include hasDeployment, ancestorPlatforms, madeBySensor, observedProperty, unit, aggregation, usedProcedures, hasFeatureOfInterest and disciplines. E.g. "?populate=unit,discipline". Population expands the string value (i.e. the id) into an object with further information about the resource.'
+        - schema:
+            type: array
+          in: query
+          name: disciplines
+          description: "Get timeseries with this exact disciplines array. Provide as a comma-separated list, e.g. disciplines=meteorology,hydrology. Order isn't important."
+        - schema:
+            type: array
+          in: query
+          name: disciplines__not
+          description: "Exclude timeseries with this exact disciplines array. Provide as a comma-separated list, e.g. disciplines=meteorology,hydrology. Order isn't important."
   '/timeseries/{timeseriesId}':
     parameters:
       - schema:
