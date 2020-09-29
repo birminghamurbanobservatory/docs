@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Birmingham Urban Observatory REST API
+  title: Bham Urban Obs REST API
   version: '1.0'
   contact:
     name: Bham Urban Obs Team
@@ -70,7 +70,7 @@ paths:
             type: string
           in: query
           name: search
-          description: "Search for matching words within the sensor's id and name. Use full words for best results."
+          description: Search for matching words within the sensor's id and name. Use full words for best results.
         - schema:
             type: integer
             maximum: 1000
@@ -211,7 +211,7 @@ paths:
                 value:
                   name: Lab Calibration Testing
                   public: false
-        description: "When creating a deployment you have the option to specifically define the `id`. If it's not defined, the `id` will be generated from the `name`."
+        description: 'When creating a deployment you have the option to specifically define the `id`. If it''s not defined, the `id` will be generated from the `name`.'
       description: 'Only users that have been granted the special permission `create:deployment` can create a deployment.'
       tags:
         - deployments
@@ -533,12 +533,12 @@ paths:
             type: array
           in: query
           name: inTimeseries__in
-          description: "Limit to only certain timeseries by providing a comma-separated list of timeseries id's"
+          description: Limit to only certain timeseries by providing a comma-separated list of timeseries id's
         - schema:
             type: array
           in: query
           name: inTimeseries__not__in
-          description: "Exclude certain timeseries by providing a comma-separated list of timeseries id's"
+          description: Exclude certain timeseries by providing a comma-separated list of timeseries id's
         - schema:
             type: string
           in: query
@@ -548,17 +548,17 @@ paths:
             type: array
           in: query
           name: hasDeployment__not__in
-          description: "Exclude observations from a set of deployments. Provide as a common-separated list of id's."
+          description: Exclude observations from a set of deployments. Provide as a common-separated list of id's.
         - schema:
             type: array
           in: query
           name: disciplines
-          description: "Get observations with this exact disciplines array. Provide as a comma-separated list, e.g. disciplines=meteorology,hydrology. Order isn't important."
+          description: 'Get observations with this exact disciplines array. Provide as a comma-separated list, e.g. disciplines=meteorology,hydrology. Order isn''t important.'
         - schema:
             type: array
           in: query
           name: disciplines__not
-          description: "Exclude timeseries with this exact disciplines array. Provide as a comma-separated list, e.g. disciplines=meteorology,hydrology. Order isn't important."
+          description: 'Exclude timeseries with this exact disciplines array. Provide as a comma-separated list, e.g. disciplines=meteorology,hydrology. Order isn''t important.'
   '/observations/{observationId}':
     parameters:
       - schema:
@@ -651,7 +651,7 @@ paths:
             type: boolean
           in: query
           name: nest
-          description: 'If true the hierachical nature of platform and sensor hosting will be conveyed by nesting platforms and sensors within each other. Look for a property called "hosts" (an array). When true the "limit" parameter limits the number of platform "trees" rather than individual platforms.'
+          description: If true the hierachical nature of platform and sensor hosting will be conveyed by nesting platforms and sensors within each other. Look for a property called "hosts" (an array). When true the "limit" parameter limits the number of platform "trees" rather than individual platforms.
         - schema:
             type: integer
             maximum: 1000
@@ -960,12 +960,12 @@ paths:
             type: array
           in: query
           name: disciplines
-          description: "Get timeseries with this exact disciplines array. Provide as a comma-separated list, e.g. disciplines=meteorology,hydrology. Order isn't important."
+          description: 'Get timeseries with this exact disciplines array. Provide as a comma-separated list, e.g. disciplines=meteorology,hydrology. Order isn''t important.'
         - schema:
             type: array
           in: query
           name: disciplines__not
-          description: "Exclude timeseries with this exact disciplines array. Provide as a comma-separated list, e.g. disciplines=meteorology,hydrology. Order isn't important."
+          description: 'Exclude timeseries with this exact disciplines array. Provide as a comma-separated list, e.g. disciplines=meteorology,hydrology. Order isn''t important.'
   '/timeseries/{timeseriesId}':
     parameters:
       - schema:
@@ -1011,7 +1011,7 @@ paths:
               schema:
                 $ref: 'https://api.birminghamurbanobservatory.com/schemas/timeseries-observations-get-response-body.json'
       operationId: get-timeseries-timeseriesId-observations
-      description: "Retrieves observations belonging to a specific timeseries. All observations within a timeseries have exactly the same values for the following properties: madeBySensor, hasDeployment, hostedByPath, unit, hasFeatureOfInterest, observedProperty, disciplines, usedProcedures. Therfore there's no need to include these properties for every single observation. By omitting these properties we can drastically reduce the amount of data that needs to be returned. This endpoint is ideal for getting a series of observations for plotting on a line graph (at least for observations whose value is numeric)."
+      description: 'Retrieves observations belonging to a specific timeseries. All observations within a timeseries have exactly the same values for the following properties: madeBySensor, hasDeployment, hostedByPath, unit, hasFeatureOfInterest, observedProperty, disciplines, usedProcedures. Therfore there''s no need to include these properties for every single observation. By omitting these properties we can drastically reduce the amount of data that needs to be returned. This endpoint is ideal for getting a series of observations for plotting on a line graph (at least for observations whose value is numeric).'
       parameters:
         - schema:
             type: string
