@@ -625,7 +625,7 @@ paths:
         - schema:
             type: string
           in: query
-          name: inDeployments__includes
+          name: inDeployment
         - schema:
             type: string
           in: query
@@ -761,6 +761,11 @@ paths:
           in: query
           name: search
           description: Searchs the id and name properties for any word matches. Try to provide whole words.
+        - schema:
+            type: string
+          in: query
+          name: inDeployment__in
+          description: comma-separated list of deplomyment id's
     post:
       summary: Create Platform
       tags:
